@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+	第一名:${first }<br/>
+	第二名:${last }<br/>
 	最终结果${result }
 </body>
 </html>

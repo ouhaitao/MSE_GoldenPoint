@@ -10,7 +10,7 @@
 <script type="text/javascript">
 	function submit(){
 		var num = document.getElementById("number").value;
-		num=parseInt(num);
+		num*=1;
 		if(num>=0&&num<=100){
 			window.location.href="star?number="+num;
 		}else
