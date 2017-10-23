@@ -38,8 +38,16 @@ public class Game extends HttpServlet {
 			numCount=0;
 		double t = Double.parseDouble(request.getParameter("number"));
 		num[numCount++] = t;
+
+		long time=System.currentTimeMillis();
 		while(numCount!=3){
 			Thread.yield();
+			//设置请求过期时间为1分钟
+			if((System.currentTimeMillis()-time)>60000){
+				System.out.println("distroy");
+				numCount--;
+				return ;
+			}
 		}
 		request.getSession().setAttribute("num", numCount);
 		double result = 0;
